@@ -1,7 +1,6 @@
 package com.visites.visite.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.sun.istack.internal.Nullable;
 
 import javax.persistence.*;
 import java.io.Serializable;
