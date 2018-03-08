@@ -11,7 +11,7 @@ public class VisiteRepository {
     private EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("ini_PU");
 
 
-    public int Create(int id_agent, int id_visiteur, String date_visite, String adresse, Byte signature_visiteur, Byte signature_agent) {
+    public int Create(int id_agent, int id_visiteur, String date_visite, String adresse, String signature_visiteur, String signature_agent) {
 
         EntityManager emf = entityManagerFactory.createEntityManager();
         Session session = (Session) emf.getDelegate();

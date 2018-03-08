@@ -1,6 +1,7 @@
 package com.visites.visite.rest;
 
 import com.visites.visite.repository.VisiteRepository;
+import org.json.JSONObject;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -18,21 +19,23 @@ public class RestVisite {
             @QueryParam("date_visite") String date_visite,
             @QueryParam("adresse") String adresse,
             @QueryParam("signature_visiteur") Byte signature_visiteur,
-            @QueryParam("signature_agent") Byte signature_agent
-
+            @QueryParam("signature_agent") Byte signature_agent,
+            String body
     ) {
+
+        JSONObject post = new JSONObject(body);
 
         VisiteRepository ir = new VisiteRepository();
 
-        System.out.println(id_agent);
-        System.out.println(id_visiteur);
-        System.out.println(date_visite);
-        System.out.println(adresse);
-        System.out.println(signature_visiteur);
-        System.out.println(signature_agent);
-
-
-        return Response.status(200).entity(ir.Create(id_agent, id_visiteur, date_visite,adresse,signature_visiteur,signature_agent)).build();
+        return Response.status(200).entity(
+                ir.Create(
+                        post.getInt("id_agent"),
+                        post.getInt("id_visiteur"),
+                        post.getString("date_visite"),
+                        post.getString("adresse"),
+                        post.getString("signature_visiteur"),
+                        post.getString("signature_agent"))
+        ).build();
 
     }
 

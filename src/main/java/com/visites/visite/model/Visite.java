@@ -28,10 +28,10 @@ public class Visite implements Serializable {
     private String adresse;
 
     @Column(name = "signature_visiteur", nullable = true)
-    private Byte signature_visiteur;
+    private String signature_visiteur;
 
     @Column(name = "signature_agent", nullable = true)
-    private Byte signature_agent;
+    private String signature_agent;
 
     public int getId_agent() {
         return id_agent;
@@ -65,19 +65,19 @@ public class Visite implements Serializable {
         this.adresse = adresse;
     }
 
-    public Byte getSignatureVisiteur() {
+    public String getSignatureVisiteur() {
         return signature_visiteur;
     }
 
-    public void setSignatureVisiteur(Byte signature_visiteur) {
+    public void setSignatureVisiteur(String signature_visiteur) {
         this.signature_visiteur = signature_visiteur;
     }
 
-    public Byte getSignatureAgent() {
+    public String getSignatureAgent() {
         return signature_agent;
     }
 
-    public void setSignatureAgent(Byte signature_agent) {
+    public void setSignatureAgent(String signature_agent) {
         this.signature_agent = signature_agent;
     }
 
