@@ -89,4 +89,14 @@ public class Visite implements Serializable {
         this.id = id;
     }
 
+    @Override
+    public String toString() {
+        return "{id_agent:"+this.getId_agent()+"," +
+                "id_visiteur:"+this.getId_visiteur()+"," +
+                "date_visite:"+this.getDate_visite()+"," +
+                "adresse:"+this.getAdresse()+"," +
+                "signature_visiteur:"+this.getSignature_visiteur()+"," +
+                "signature_agent:"+this.getSignature_agent()+"}";
+    }
+
 }
