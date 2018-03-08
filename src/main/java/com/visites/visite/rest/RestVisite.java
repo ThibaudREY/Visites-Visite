@@ -23,8 +23,6 @@ public class RestVisite {
             String body
     ) {
 
-        System.out.println(body);
-
         JSONObject post = new JSONObject(body);
 
         VisiteRepository ir = new VisiteRepository();
@@ -89,14 +87,7 @@ public class RestVisite {
 
         VisiteRepository ir = new VisiteRepository();
 
-        return Response
-                .status(200).header("Access-Control-Allow-Origin", "*")
-                .header("Access-Control-Allow-Credentials", "true")
-                .header("Access-Control-Allow-Headers",
-                        "origin, content-type, accept, authorization")
-                .header("Access-Control-Allow-Methods",
-                        "GET, POST, PUT, DELETE, OPTIONS, HEAD")
-                .entity(ir.All()).build();
+        return Response.status(200).entity(ir.All()).build();
 
     }
 

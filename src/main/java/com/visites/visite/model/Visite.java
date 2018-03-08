@@ -37,23 +37,23 @@ public class Visite implements Serializable {
         return id_agent;
     }
 
-    public void setIdAgent(int id_agent) {
+    public void setId_agent(int id_agent) {
         this.id_agent = id_agent;
     }
 
-    public int getIdVisiteur() {
+    public int getId_visiteur() {
         return id_visiteur;
     }
 
-    public void setIdVisiteur(int id_visiteur) {
+    public void setId_visiteur(int id_visiteur) {
         this.id_visiteur = id_visiteur;
     }
 
-    public String getDateVisite() {
+    public String getDate_visite() {
         return date_visite;
     }
 
-    public void setDateVisite(String date_visite) {
+    public void setDate_visite(String date_visite) {
         this.date_visite = date_visite;
     }
 
@@ -65,19 +65,19 @@ public class Visite implements Serializable {
         this.adresse = adresse;
     }
 
-    public String getSignatureVisiteur() {
+    public String getSignature_visiteur() {
         return signature_visiteur;
     }
 
-    public void setSignatureVisiteur(String signature_visiteur) {
+    public void setSignature_visiteur(String signature_visiteur) {
         this.signature_visiteur = signature_visiteur;
     }
 
-    public String getSignatureAgent() {
+    public String getSignature_agent() {
         return signature_agent;
     }
 
-    public void setSignatureAgent(String signature_agent) {
+    public void setSignature_agent(String signature_agent) {
         this.signature_agent = signature_agent;
     }
 

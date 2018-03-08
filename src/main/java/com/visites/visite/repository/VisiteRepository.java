@@ -19,12 +19,12 @@ public class VisiteRepository {
         session.getTransaction().begin();
 
         Visite visite = new Visite();
-        visite.setIdAgent(id_agent);
-        visite.setIdVisiteur(id_visiteur);
-        visite.setDateVisite(date_visite);
+        visite.setId_agent(id_agent);
+        visite.setId_visiteur(id_visiteur);
+        visite.setDate_visite(date_visite);
         visite.setAdresse(adresse);
-        visite.setSignatureVisiteur(signature_visiteur);
-        visite.setSignatureAgent(signature_agent);
+        visite.setSignature_visiteur(signature_visiteur);
+        visite.setSignature_agent(signature_agent);
 
         int id = (Integer) session.save(visite);
 
