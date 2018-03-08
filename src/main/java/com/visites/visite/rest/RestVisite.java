@@ -23,6 +23,8 @@ public class RestVisite {
             String body
     ) {
 
+        System.out.println(body);
+
         JSONObject post = new JSONObject(body);
 
         VisiteRepository ir = new VisiteRepository();
