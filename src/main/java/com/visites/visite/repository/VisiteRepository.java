@@ -50,18 +50,20 @@ public class VisiteRepository {
         return res.toString();
     }
 
-    public int Update(int id,int id_agent, int id_visiteur, String date_visite, String adresse) {
+    public int Update(int id, int id_agent, int id_visiteur, String date_visite, String adresse, String signature_visiteur, String signature_agent) {
 
         EntityManager emf = entityManagerFactory.createEntityManager();
         Session session = (Session) emf.getDelegate();
 
         session.getTransaction().begin();
 
-        Query query = emf.createQuery("UPDATE Visite i SET i.id_agent = :id_agent, i.id_visiteur = :id_visiteur, i.date_visite = :date_visite,  i.adresse = :adresse WHERE i.id = :id");
+        Query query = emf.createQuery("UPDATE Visite i SET i.id_agent = :id_agent, i.id_visiteur = :id_visiteur, i.date_visite = :date_visite,  i.adresse = :adresse, i.signature_visiteur = :signature_visiteur, i.signature_agent = :signature_agent WHERE i.id = :id");
 
         query.setParameter("id_agent", id_agent);
         query.setParameter("id_visiteur", id_visiteur);
         query.setParameter("date_visite", date_visite);
+        query.setParameter("signature_agent", signature_agent);
+        query.setParameter("signature_visiteur", signature_visiteur);
         query.setParameter("adresse", adresse);
         query.setParameter("id", id);
 
