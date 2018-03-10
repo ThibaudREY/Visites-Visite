@@ -46,14 +46,14 @@ public class RestVisite {
 
     @PUT
     @Path("/{id}")
-    public Response Update(String body) {
+    public Response Update(@PathParam("id") int id, String body) {
 
         JSONObject post = new JSONObject(body);
 
         VisiteRepository ir = new VisiteRepository();
 
         ir.Update(
-                post.getInt("id"),
+                id,
                 post.getInt("id_agent"),
                 post.getInt("id_visiteur"),
                 post.getString("date_visite"),
