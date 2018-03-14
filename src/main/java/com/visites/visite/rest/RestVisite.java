@@ -77,7 +77,18 @@ public class RestVisite {
     }
 
     @GET
-    @Path("/all{start : (/start)?}{length : (/length)?}")
+    @Path("/all")
+    @Produces({MediaType.APPLICATION_JSON})
+    public Response ReadAll() {
+
+        VisiteRepository ir = new VisiteRepository();
+
+        return Response.status(200).entity(ir.All()).build();
+
+    }
+
+    @GET
+    @Path("/all/{start}/{length}")
     @Produces({MediaType.APPLICATION_JSON})
     public Response ReadAll(@PathParam("start") int start, @PathParam("length") int length) {
 

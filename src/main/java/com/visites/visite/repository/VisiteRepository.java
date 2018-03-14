@@ -95,6 +95,24 @@ public class VisiteRepository {
         return res;
     }
 
+    public List All() {
+
+        EntityManager emf = entityManagerFactory.createEntityManager();
+        Session session = (Session) emf.getDelegate();
+
+        session.getTransaction().begin();
+
+        Query query = emf.createQuery("FROM Visite i");
+
+        List res = query.getResultList();
+
+        session.getTransaction().commit();
+
+        emf.close();
+
+        return res;
+    }
+
     public List All(int start, int length) {
 
         if (length == 0) {
