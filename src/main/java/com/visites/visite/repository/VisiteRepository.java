@@ -95,13 +95,24 @@ public class VisiteRepository {
         return res;
     }
 
-    public List All() {
+    public List All(int start, int length) {
+
+        if (length == 0) {
+            start = 0;
+        }
+
         EntityManager emf = entityManagerFactory.createEntityManager();
         Session session = (Session) emf.getDelegate();
 
         session.getTransaction().begin();
 
-        Query query = emf.createQuery("FROM Visite i");
+        Query query = emf.createQuery("FROM Visite i WHERE i.id > :start");
+
+        query.setParameter("start", start);
+
+        if (length > 0) {
+            query.setMaxResults(length);
+        }
 
         List res = query.getResultList();
 
